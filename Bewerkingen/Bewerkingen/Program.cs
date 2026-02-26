@@ -42,7 +42,9 @@
                     break;
 
                 default:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Bewerking niet ondersteund");
+                    Console.ResetColor();
                     return;
             }
             Console.WriteLine($"Resultaat: {som:F2}");
