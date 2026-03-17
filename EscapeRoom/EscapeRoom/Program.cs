@@ -1,23 +1,11 @@
-﻿namespace EscapeRoom2
+﻿namespace EscapeRoom
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int minutesLeft = 15;
-            bool isKeypadSolved = false;
-            bool isRiddleSolved = false;
-
             ShowTitle();
-            ShowIntro();
-            ShowStatus(minutesLeft, isKeypadSolved, isRiddleSolved);
-            ShowMenu();
-            int action = ReadAction();
-
-            if(action == 1)
-            {
-                TryKeypad();
-            }
+            TryKeypad();
         }
 
         private static void ShowTitle()
@@ -57,7 +45,7 @@
             ShowColoredText($"Keypad: {(keypadSolved ? "solved" : "unsolved")}", ConsoleColor.Blue, true);
             ShowColoredText($"Riddle: {(riddleSolved ? "solved" : "unsolved")}", ConsoleColor.Blue, true);
             Console.WriteLine();
-        }
+        }      
 
         private static void ShowMenu()
         {
@@ -92,27 +80,17 @@
 
         private static bool TryKeypad()
         {
-            ShowColoredText("Enter 3-digit keypad code: ", ConsoleColor.Magenta, false);
-            string input = Console.ReadLine().Trim();
+            ShowColoredText("Enter 3-digit keypad code: ", ConsoleColor.Magenta);
+            string input = Console.ReadLine();
 
-            if (input.Equals("314"))
+            if (!int.TryParse(Console.ReadLine(), out int output)
             {
-                ShowColoredText("Keypad Unlocked", ConsoleColor.Green, true);
-                return true;
+                ShowColoredText($"Invalid Code (not a number)", ConsoleColor.DarkRed, false);
+            }
+            else if()
+            {
 
             }
-            else if (int.TryParse(input, out _))
-            {
-                ShowColoredText("Wrong Code!", ConsoleColor.Red, true);
-                return false;
-            }
-            else
-            {
-                ShowColoredText("Invalid Code!", ConsoleColor.DarkRed, true);
-                return false;
-            }
-
-            
         }
     }
 }
