@@ -83,7 +83,7 @@
                 Console.Write("Enter your choice: ");
                 string inputChoice = Console.ReadLine();
 
-                int knightAttack = rng.Next(5, 16);
+                int knightAttack = rng.Next(11, 16);
                 int goblinAttack = rng.Next(5, 16);
                 int poisenAttack = 5;
                 
@@ -168,12 +168,7 @@
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine($"You attacked the goblin for an extra {knightAttack} CRITICAL damage");
                             Console.ResetColor();
-
-                            knightHealth -= 5;
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Wrong input, Health -5 points");
-                            Console.ResetColor();
-                            criticalCounter = 0;
+         
                         }
                         else
                         {
