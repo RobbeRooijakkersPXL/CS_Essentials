@@ -62,5 +62,10 @@ namespace SalaryCalculator.Models
 
 
         }
+
+        public override string ToString()
+        {
+            return $"{this.FirstName} {this.LastName} - {this.Age} - {this.Salary:c}";
+        }
     }
 }
